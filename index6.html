@@ -1,0 +1,51 @@
+
+<!DOCTYPE html><html  data-capo=""><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bundesamt für Informatik und Telekommunikation BIT</title>
+<script type="text/javascript" src="https://c5c940cd-90a6-ef11-b8e9-000d3a45334b-01.EMEA-GWC.prd.anywhere365.cloud/WebChat20_ucc-demoservice-oaebp/webchat.bootstrap.js"></script>
+</head>
+<body  class="body--standardsite"><div id="__nuxt">
+<script>
+config = {
+                storageLocation: sessionStorage,
+        available: {
+            teaseMessageSettings: {
+                message: {
+                    'en': 'Hi! How can i Help you?'
+                },
+            showAsMessage: true,
+            showAsTeaser: true,
+            onTimeout: 500
+            },
+            state: 'Enabled',
+            
+        },
+        offline: {
+            state: 'Enabled',
+            teaseMessageSettings: {
+                message: {
+                    'en': ''
+                },
+            showAsMessage: true,
+            showAsTeaser: true,
+            onTimeout: 5000
+            }
+        },
+        away: {
+            state: 'Enabled',
+			teaseMessageSettings: {
+                message: {
+                    'en': 'Offline We are closed'
+                },
+            showAsMessage: true,
+            showAsTeaser: true,
+            onTimeout: 5000
+            }
+        }
+    };
+    WebChat.load(config);
+    window.addEventListener('WebChatLoaded', function() {
+        WebChat.setUser('website@bit.ch', 'Anonymous Website User');
+    });
+		</script>
+</body></html>
