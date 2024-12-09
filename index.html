@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://c5c940cd-90a6-ef11-b8e9-000d3a45334b-01.EMEA-GWC.prd.anywhere365.cloud/WebChat20_ucc-demoservice-oaebp/webchat.bootstrap.js"></script>
+	</head>
+	<body>
+		<script>
+config = {
+                storageLocation: sessionStorage,
+        available: {
+            teaseMessageSettings: {
+                message: {
+                    'en': 'Hi! How can i Help you?'
+                },
+            showAsMessage: true,
+            showAsTeaser: true,
+            onTimeout: 500
+            },
+            state: 'Enabled',
+            
+        },
+        offline: {
+            state: 'Enabled',
+            teaseMessageSettings: {
+                message: {
+                    'en': ''
+                },
+            showAsMessage: true,
+            showAsTeaser: true,
+            onTimeout: 5000
+            }
+        },
+        away: {
+            state: 'Enabled',
+			teaseMessageSettings: {
+                message: {
+                    'en': 'Offline We are closed'
+                },
+            showAsMessage: true,
+            showAsTeaser: true,
+            onTimeout: 5000
+            }
+        },
+		templates: {
+           topBar: `<div class="topbar-container">
+			<span class="top-logo">
+				<br />
+				<webchat-image src="https://germany.iom.int/themes/custom/iom2021/logo.svg"></webchat-image>
+			</span>
+			<webchat-theme-button></webchat-theme-button>
+			<span class="top-logo-placeholder"></span>
+			<span class="bar-buttons">
+				<webchat-minimize-button class="minimize-button"></webchat-minimize-button>
+				<webchat-maximize-button class="maximize-button"></webchat-maximize-button>
+				<webchat-close-button class="close-button"></webchat-close-button>
+			</span></div>
+			<style>:host {height: 44px;box-sizing: border-box;width: 100%;background-color: transparent;padding: 0 13px;display: block}.topbar-container {display: flex;position: relative;height: 100%;align-items: center}.topbar-container .top-logo-placeholder {flex: 1 1 auto}.topbar-container .top-logo {position: absolute;width: 100%}.top-logo {display: flex;justify-content: center; paddingfont-family: Roboto, "Segoe UI Emoji";font-size: 16px;font-weight: 600;color: var(--text-color);pointer-events: none}.top-logo svg {width: 20px;height: 20px;margin-right: 8px}.bar-buttons {display: flex}.bar-buttons :not(:first-child) {margin-left: 10px}@media (max-width: 700px) {.maximize-button {display: none}.top-logo {margin-left: 4px;width: calc(100% - 92px)}}</style>`,
+			startButton: `<div class="container">
+   <div class="button-circle"></div>
+   <span class="icon">
+      <webchat-image class="image-text" src="https://i.ibb.co/jHjGbVr/image-removebg-preview-3.png">
+      </webchat-image>
+   </span>
+</div>
+<webchat-unread-counter></webchat-unread-counter>
+<webchat-ucc-presence-indicator></webchat-ucc-presence-indicator>
+<style>
+.image-text {
+	top: -60px;
+}
+</style>`
+			
+
+       }
+    };
+    WebChat.load(config);
+    window.addEventListener('WebChatLoaded', function() {
+        WebChat.setUser('website@iom.int', 'Anonymous Website User');
+    });
+		</script>
+	</body>
+</html>
